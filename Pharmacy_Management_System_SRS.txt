@@ -1,0 +1,1242 @@
+ 
+ Software Requirements Specification (SRS) 
+ Pharmacy Management System 
+ A Comprehensive Digital System for Pharmacy Operations, Inventory Management, and Sales Processing 
+ Document Version: 1.0 
+ Date: January 07, 2026 
+ Location: Dar es Salaam, Tanzania 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ Contents 
+ Contents 
+ TOC \o "1-3" \h \z \u Software Requirements Specification (SRS) PAGEREF _Toc220706261 \h 1 
+ Pharmacy Management System PAGEREF _Toc220706262 \h 1 
+ Contents PAGEREF _Toc220706263 \h 2 
+ PHASE 1: PLANNING AND REQUIREMENT ANALYSIS PAGEREF _Toc220706264 \h 4 
+ 1. Introduction PAGEREF _Toc220706265 \h 4 
+ 1.1 Purpose PAGEREF _Toc220706266 \h 4 
+ 1.2 Scope PAGEREF _Toc220706267 \h 4 
+ 2. Stakeholders PAGEREF _Toc220706268 \h 4 
+ 3. Feasibility Study PAGEREF _Toc220706269 \h 5 
+ 3.1 Technical Feasibility PAGEREF _Toc220706270 \h 5 
+ 3.2 Economic Feasibility PAGEREF _Toc220706271 \h 6 
+ 3.3 Operational Feasibility PAGEREF _Toc220706272 \h 6 
+ 3.4 Legal Feasibility PAGEREF _Toc220706273 \h 7 
+ 3.5 Schedule Feasibility PAGEREF _Toc220706274 \h 7 
+ 4. System Requirements PAGEREF _Toc220706275 \h 8 
+ 4.1 Functional Requirements PAGEREF _Toc220706276 \h 8 
+ 4.2 Non-Functional Requirements PAGEREF _Toc220706277 \h 11 
+ 5. Use Cases PAGEREF _Toc220706278 \h 15 
+ 5.1 Admin Use Cases PAGEREF _Toc220706279 \h 15 
+ 5.2 Pharmacist Use Cases PAGEREF _Toc220706280 \h 16 
+ 5.3 Cashier Use Cases PAGEREF _Toc220706281 \h 16 
+ 5.4 Supplier Use Cases (Optional) PAGEREF _Toc220706282 \h 16 
+ 5.5 System (Automated) Use Cases PAGEREF _Toc220706283 \h 16 
+ 6. Use Case Diagram PAGEREF _Toc220706284 \h 17 
+ Use Case Diagram Description PAGEREF _Toc220706285 \h 18 
+ 7. Data Flow Diagrams (DFD) PAGEREF _Toc220706286 \h 19 
+ 7.1 Level 0 DFD (Context Diagram) PAGEREF _Toc220706287 \h 19 
+ 7.2 Level 1 DFD (Major Processes) PAGEREF _Toc220706288 \h 20 
+ 7.3 Level 2 DFD (Detailed Processes) PAGEREF _Toc220706289 \h 20 
+ PHASE 2: DESIGN PHASE PAGEREF _Toc220706290 \h 23 
+ 1. Database Design PAGEREF _Toc220706291 \h 23 
+ 1.1 Database Technology PAGEREF _Toc220706292 \h 23 
+ 1.2 Database Schema Overview PAGEREF _Toc220706293 \h 23 
+ 1.3 Table Definitions PAGEREF _Toc220706294 \h 24 
+ 1.3.1 Users Table PAGEREF _Toc220706295 \h 24 
+ 1.3.2 Suppliers Table PAGEREF _Toc220706296 \h 24 
+ 1.3.3 Medicines Table PAGEREF _Toc220706297 \h 25 
+ 1.3.4 Sales Table PAGEREF _Toc220706298 \h 25 
+ 1.3.5 Sale_Items Table PAGEREF _Toc220706299 \h 25 
+ 1.3.6 Prescriptions Table PAGEREF _Toc220706300 \h 26 
+ 1.3.7 Inventory_Logs Table PAGEREF _Toc220706301 \h 26 
+ 2. Entity Relationship Diagram (ERD) PAGEREF _Toc220706302 \h 27 
+ 3. User Interface Overview PAGEREF _Toc220706303 \h 28 
+ 3.1 UI/UX Design Principles PAGEREF _Toc220706304 \h 28 
+ 3.2 Color Palette PAGEREF _Toc220706305 \h 28 
+ 3.3 Key Screen Templates PAGEREF _Toc220706306 \h 29 
+ 3.3.1 Homepage PAGEREF _Toc220706307 \h 29 
+ 3.3.2 Sign In Page PAGEREF _Toc220706308 \h 31 
+ 3.3.3 Pharmacist Dashboard PAGEREF _Toc220706309 \h 32 
+ 3.3.4 Customer Page PAGEREF _Toc220706310 \h 33 
+ 3.3.5 Cashier Page PAGEREF _Toc220706311 \h 34 
+ 3.3.6 Admin Dashboard PAGEREF _Toc220706312 \h 35 
+ 4. Sequence Diagrams PAGEREF _Toc220706313 \h 36 
+ 4.1 User Login Sequence PAGEREF _Toc220706314 \h 36 
+ 4.2 Cashier Sales Process Sequence PAGEREF _Toc220706315 \h 37 
+ 4.3 Admin Medicine Management Sequence PAGEREF _Toc220706316 \h 38 
+ 5 CONCLUSION PAGEREF _Toc220706317 \h 39 
+ Document Approval PAGEREF _Toc220706318 \h 39 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ PHASE 1: PLANNING AND REQUIREMENT ANALYSIS 
+ 1. Introduction 
+ 1.1 Purpose 
+ This document provides a comprehensive and detailed description of the requirements for the Pharmacy Management System. The SRS document is intended for pharmacy stakeholders (pharmacy owners, administrators, staff), system developers, academic evaluation, and project governance. It serves as the authoritative reference for system development, testing, and validation. 
+ 1.2 Scope 
+ The Pharmacy Management System is a comprehensive digital platform designed to streamline and automate pharmacy operations including medicine inventory management, sales processing, prescription handling, and reporting. The system supports user authentication, medicine data management, stock tracking, sales transactions, supplier management, and comprehensive reporting without integration to external national healthcare systems. 
+ Key Features: 
+ Secure user authentication with role-based access control 
+ Medicine inventory management with add, update, and delete capabilities 
+ Stock tracking with expiry date monitoring 
+ Sales processing with automatic price calculation 
+ Prescription verification and dispensing 
+ Supplier management and purchase order tracking 
+ Comprehensive sales and inventory reports 
+ Low-stock and expiry alerts 
+ Role-based dashboards for admin, pharmacist, and cashier 
+ Receipt generation for transactions 
+ 2. Stakeholders 
+ Stakeholder 
+ Role 
+ Responsibilities 
+ Developer 
+ Technical Implementation 
+ Build and maintain system functionality, implement features 
+ UI/UX Designer 
+ Interface Design 
+ Create intuitive, user-friendly interfaces for all user roles 
+ Patient/Customer 
+ End User 
+ Purchase medicines, submit prescriptions, receive receipts 
+ Pharmacist 
+ Medicine Handler 
+ Verify prescriptions, dispense medicines, update stock, check expiry dates 
+ Cashier 
+ Transaction Handler 
+ Process sales, calculate totals, receive payments, print receipts 
+ Admin 
+ System Administrator 
+ Manage users, medicines, suppliers, view reports, oversee system 
+ Supplier 
+ Medicine Provider 
+ View purchase orders, deliver medicines, provide invoice details 
+ Testers 
+ Quality Assurance 
+ Test system functionality, identify bugs, ensure quality 
+ 3. Feasibility Study 
+ 3.1 Technical Feasibility 
+ The Pharmacy Management System can be developed using common technologies such as a computer, basic software, and a database. No advanced hardware is required. 
+ The system can be developed using modern web technologies that are well-established and proven: 
+ Frontend: HTML, CSS, JavaScript (React JS) 
+ Backend: Python (Django) or Node.js with REST API architecture 
+ Database: PostgreSQL or MySQL 
+ Reporting: Report generation libraries for sales and inventory reports 
+ Hosting: Cloud-based hosting or local server deployment 
+ Browser Compatibility: 
+ Modern browsers (Chrome, Firefox, Safari, Edge) 
+ Technical Achievability: 
+ The system's core features—authentication, inventory management, sales processing, and report generation—are technically achievable using existing frameworks and established development tools. All proposed functionality aligns with current industry standards and best practices. 
+ Device Compatibility: 
+ The platform will be accessible on: 
+ Desktop computers 
+ Tablets 
+ Point of Sale (POS) terminals 
+ → Technically feasible. 
+ 3.2 Economic Feasibility 
+ Development and maintenance costs are low compared to benefits like reduced errors, better stock control, and improved efficiency. 
+ Cost Analysis: 
+ Minimal Infrastructure: No complex system integrations reduce capital expenditure 
+ Technology Stack: Open-source tools (React, Django/Node.js, PostgreSQL) 
+ Main Costs: 
+ Web development (labor) 
+ Server hosting and maintenance 
+ Database management 
+ Potential ongoing support and maintenance 
+ Operational Cost Recovery: 
+ The platform reduces administrative workload through automation of inventory tracking and sales processing, enabling operational cost recovery through reduced manual errors, better stock management, and staff time savings. 
+ → Economically feasible. 
+ 3.3 Operational Feasibility 
+ The system automates inventory, sales, and records. Pharmacy staff can use it with minimal training. 
+ User-Friendly Operation: 
+ The platform is designed for ease of use by pharmacy staff with minimal technical training: 
+ For Admin: Dashboard for managing users, medicines, suppliers, and viewing reports 
+ For Pharmacist: Simple medicine search, prescription verification, stock updates 
+ For Cashier: Intuitive sales interface, automatic calculations, receipt printing 
+ Training Requirements: 
+ Minimal—basic orientation on platform navigation 
+ Accessibility: 
+ The clean design ensures accessibility for users with varying technical proficiency levels. 
+ → Operationally feasible. 
+ 3.4 Legal Feasibility 
+ The system supports secure record keeping and complies with pharmacy regulations when proper access control is used. 
+ Compliance Framework: 
+ The system operates within established legal and ethical boundaries: 
+ Pharmacy Tool: Functions as an internal management system for pharmacy operations 
+ Data Protection: Complies with data protection regulations for personal and medical information 
+ Prescription Handling: Supports proper prescription verification and record keeping 
+ Audit Trail: Maintains comprehensive logs for regulatory compliance 
+ Regulatory Alignment: 
+ The system aligns with pharmacy regulatory frameworks and data protection requirements for healthcare-related systems. 
+ → Legally feasible. 
+ 3.5 Schedule Feasibility 
+ The system can be developed and implemented within a short time (about 1–2 months). 
+ Development Timeline: 
+ The system can be developed within a reasonable academic and practical timeframe. 
+ Agile Approach: 
+ Using iterative development and Agile methodology enables incremental feature deployment and rapid iteration based on feedback. 
+ → Schedule feasible. 
+ A normal Pharmacy Management System is feasible in all aspects and suitable for improving pharmacy operations. 
+ 4. System Requirements 
+ 4.1 Functional Requirements 
+ 4.1.1 User Authentication 
+ Requirement ID 
+ Requirement 
+ Priority 
+ FR-001 
+ System shall allow users to log in securely 
+ High 
+ FR-002 
+ System shall manage user roles (admin, pharmacist, cashier) 
+ High 
+ FR-003 
+ System shall restrict access to features based on user roles 
+ High 
+ FR-004 
+ System shall support password recovery 
+ Medium 
+ FR-005 
+ System shall enforce password encryption and secure storage 
+ High 
+ Description: 
+ Users authenticate through a secure login interface. Authentication tokens manage session state, and the system enforces role-based access control to prevent unauthorized access to protected features. 
+ 4.1.2 Medicine Management 
+ Requirement ID 
+ Requirement 
+ Priority 
+ FR-006 
+ System shall allow the admin to add, update, and delete medicines 
+ High 
+ FR-007 
+ System shall record medicine quantities and expiry dates 
+ High 
+ FR-008 
+ System shall allow searching for medicines by name 
+ High 
+ FR-009 
+ System shall store medicine details in the database 
+ High 
+ Description: 
+ Admin users can manage the medicine catalog by adding new medicines, updating existing records, and removing obsolete entries. The system maintains comprehensive medicine data including names, quantities, prices, and expiry dates. 
+ 4.1.3 Inventory Management 
+ Requirement ID 
+ Requirement 
+ Priority 
+ FR-010 
+ System shall update stock after each sale automatically 
+ High 
+ FR-011 
+ System shall generate low-stock alerts 
+ High 
+ FR-012 
+ System shall generate expiry alerts 
+ High 
+ FR-013 
+ System shall generate inventory reports 
+ High 
+ FR-014 
+ System shall allow pharmacist to update medicine stock 
+ High 
+ Description: 
+ The inventory management module tracks medicine stock levels in real-time. Automated alerts notify staff of low stock levels and approaching expiry dates, enabling proactive inventory management. 
+ 4.1.4 Sales Processing 
+ Requirement ID 
+ Requirement 
+ Priority 
+ FR-015 
+ System shall process medicine sales 
+ High 
+ FR-016 
+ System shall calculate total cost automatically 
+ High 
+ FR-017 
+ System shall allow receiving payment 
+ High 
+ FR-018 
+ System shall print receipt 
+ High 
+ FR-019 
+ System shall store prescription records 
+ High 
+ FR-020 
+ System shall store transaction records 
+ High 
+ Description: 
+ The sales processing module handles complete transaction workflows from medicine selection through payment processing. The system automatically calculates totals, processes payments, and generates receipts for customers. 
+ 4.1.5 Reporting and Analytics 
+ Requirement ID 
+ Requirement 
+ Priority 
+ FR-021 
+ System shall generate sales reports 
+ High 
+ FR-022 
+ System shall generate inventory reports 
+ High 
+ FR-023 
+ System shall calculate sales totals automatically 
+ High 
+ FR-024 
+ Admin dashboard shall display basic system statistics 
+ Medium 
+ Description: 
+ The reporting module provides comprehensive analytics on sales performance and inventory status. Reports can be generated on demand and include detailed breakdowns of transactions and stock levels. 
+ 4.1.6 Supplier Management 
+ Requirement ID 
+ Requirement 
+ Priority 
+ FR-025 
+ System shall manage supplier information 
+ High 
+ FR-026 
+ System shall allow suppliers to view purchase orders 
+ Medium 
+ FR-027 
+ System shall track medicine deliveries 
+ Medium 
+ FR-028 
+ System shall store invoice details 
+ Medium 
+ Description: 
+ The supplier management module maintains supplier records and tracks purchase orders. Suppliers can view orders and delivery schedules, streamlining the procurement process. 
+ 4.2 Non-Functional Requirements 
+ 4.2.1 Performance 
+ Requirement ID 
+ Requirement 
+ Target 
+ NFR-001 
+ System shall respond to user actions quickly 
+ < 3 seconds response time 
+ NFR-002 
+ System shall handle concurrent users 
+ Minimum 20-50 simultaneous users 
+ NFR-003 
+ Database query response time 
+ < 500ms for 95% of queries 
+ NFR-004 
+ Receipt generation time 
+ < 5 seconds 
+ 4.2.2 Security 
+ Requirement ID 
+ Requirement 
+ Implementation 
+ NFR-005 
+ System shall be secure and protect sensitive data 
+ Encryption for data at rest and in transit 
+ NFR-006 
+ System shall support role-based access control 
+ RBAC for admin, pharmacist, cashier features 
+ NFR-007 
+ Password encryption 
+ Secure hashing algorithm 
+ NFR-008 
+ Session management 
+ Secure session tokens with expiration 
+ NFR-009 
+ Input validation 
+ All user inputs validated and sanitized 
+ NFR-010 
+ SQL injection prevention 
+ Parameterized queries and ORM usage 
+ Description: 
+ Security measures ensure user data protection, secure authentication, and prevention of common vulnerabilities. Only authorized users can access role-specific features and sensitive data. 
+ 4.2.3 Usability 
+ Requirement ID 
+ Requirement 
+ Standard 
+ NFR-011 
+ System shall be easy to use and user-friendly 
+ Simple, intuitive, clean design 
+ NFR-012 
+ Navigation 
+ Clear, self-explanatory navigation flows 
+ NFR-013 
+ User documentation 
+ In-app help and simple user guides 
+ NFR-014 
+ Error messages 
+ Clear, actionable error messaging 
+ Description: 
+ The interface is designed for users with minimal technical expertise. Navigation should be intuitive, and all elements should have clear purposes. 
+ 4.2.4 Reliability 
+ Requirement ID 
+ Requirement 
+ Target 
+ NFR-015 
+ System shall be reliable and available during business hours 
+ 99% uptime during operating hours 
+ NFR-016 
+ System shall allow data backup and recovery 
+ Daily automated backups 
+ NFR-017 
+ Error handling 
+ Graceful error recovery with user notification 
+ NFR-018 
+ Logging 
+ Comprehensive audit logging of system actions 
+ Description: 
+ The system must remain available and operational, with safeguards against data loss. Automated backups ensure data persistence and recovery capability. 
+ 4.2.5 Scalability 
+ Requirement ID 
+ Requirement 
+ Approach 
+ NFR-019 
+ System shall be scalable for future expansion 
+ Modular architecture design 
+ NFR-020 
+ Database scaling 
+ Connection pooling for efficiency 
+ NFR-021 
+ Future expansion 
+ Design for incremental feature integration 
+ Description: 
+ The architecture supports future expansion. New features can be added without major restructuring, and the system can scale to accommodate multiple pharmacy branches. 
+ 4.2.6 Compatibility 
+ Requirement ID 
+ Requirement 
+ Scope 
+ NFR-022 
+ System shall work on standard computers 
+ Windows, macOS, Linux 
+ NFR-023 
+ System shall be maintainable and easy to update 
+ Modular code structure 
+ NFR-024 
+ System shall comply with pharmacy regulations 
+ Local regulatory compliance 
+ NFR-025 
+ Browser support 
+ Chrome, Firefox, Safari, Edge (latest 2 versions) 
+ Description: 
+ The system shall function seamlessly across devices and browsers. The design ensures usability on all standard computer systems. 
+ 5. Use Cases 
+ 5.1 Admin Use Cases 
+ Login 
+ Add / update / delete users 
+ Assign user roles 
+ Add / update / delete medicines 
+ View inventory reports 
+ View sales reports 
+ Manage suppliers 
+ Logout 
+ 5.2 Pharmacist Use Cases 
+ Login 
+ Search medicines 
+ Verify prescriptions 
+ Dispense medicines 
+ Update medicine stock 
+ Check expiry dates 
+ View available medicines 
+ Logout 
+ 5.3 Cashier Use Cases 
+ Login 
+ Search medicines 
+ Process medicine sales 
+ Calculate total price 
+ Receive payment 
+ Print receipt 
+ Logout 
+ 5.4 Supplier Use Cases (Optional) 
+ View purchase orders 
+ Deliver medicines 
+ Provide invoice details 
+ 5.5 System (Automated) Use Cases 
+ Update inventory automatically 
+ Calculate sales totals 
+ Generate low-stock alerts 
+ Generate expiry alerts 
+ Store transaction records 
+ 6. Use Case Diagram 
+ The Use Case Diagram illustrates the interactions between system actors (Admin, Pharmacist, Cashier, Supplier, and System) and the various use cases in the Pharmacy Management System. 
+ Use Case Diagram - Part 1: Admin and Pharmacist 
+ Admin 
+ Login 
+ Add / update / delete 
+ users 
+ View sales reports 
+ Add / update / delete 
+ medicines 
+ Assign user roles 
+ Logout 
+ View inventory reports 
+ Manage suppliers 
+ Pharmacist 
+ Dispense medicines 
+ View available medicines 
+ Verify prescriptions 
+ Update medicine stock 
+ Login 
+ Check expiry dates 
+ Search medicines 
+ Logout 
+ Admin 
+ Login 
+ Add / update / delete 
+ users 
+ View sales reports 
+ Add / update / delete 
+ medicines 
+ Assign user roles 
+ Logout 
+ View inventory reports 
+ Manage suppliers 
+ Pharmacist 
+ Dispense medicines 
+ View available medicines 
+ Verify prescriptions 
+ Update medicine stock 
+ Login 
+ Check expiry dates 
+ Search medicines 
+ Logout 
+ 
+ Figure 6.1: Use Case Diagram showing Admin and Pharmacist use cases 
+ Use Case Diagram - Part 2: Cashier, Supplier and System 
+ Cashier 
+ Login 
+ Print receipt 
+ Receive payment 
+ Calculate total price 
+ Process medicine sales 
+ Search medicines 
+ Logout 
+ Supplier 
+ View purchase orders 
+ Deliver medicines 
+ Provide invoice details 
+ Store transaction 
+ records 
+ Generate expiry alerts 
+ Generate low-stock alerts 
+ Calculate sales totals 
+ Update inventory 
+ automatically 
+ System 
+ Cashier 
+ Login 
+ Print receipt 
+ Receive payment 
+ Calculate total price 
+ Process medicine sales 
+ Search medicines 
+ Logout 
+ Supplier 
+ View purchase orders 
+ Deliver medicines 
+ Provide invoice details 
+ Store transaction 
+ records 
+ Generate expiry alerts 
+ Generate low-stock alerts 
+ Calculate sales totals 
+ Update inventory 
+ automatically 
+ System 
+ 
+ Figure 6.2: Use Case Diagram showing Cashier, Supplier and System use cases 
+ Use Case Diagram Description 
+ Actor 
+ Use Cases 
+ Admin 
+ Login, Add/update/delete users, Assign user roles, Add/update/delete medicines, View sales reports, View inventory reports, Manage suppliers, Logout 
+ Pharmacist 
+ Login, Search medicines, Verify prescriptions, Dispense medicines, Check expiry dates, View available medicines, Update medicine stock, Logout 
+ Cashier 
+ Login, Search medicines, Process medicine sales, Calculate total price, Receive payment, Print receipt, Logout 
+ Supplier 
+ View purchase orders, Deliver medicines, Provide invoice details 
+ System 
+ Update inventory automatically, Calculate sales totals, Generate low-stock alerts, Generate expiry alerts, Store transaction records 
+ 7. Data Flow Diagrams (DFD) 
+ 7.1 Level 0 DFD (Context Diagram) 
+ The Level 0 DFD provides a high-level overview of the system's boundaries and major data flows: 
+ Major Data Flows: 
+ Customer → System: Search query, medicine requests 
+ System → Customer: Availability, price, location, service information 
+ Pharmacy Staff → System: Update inventory, price, services, hours, confirmations 
+ System → Pharmacy Staff: Confirmation, alerts, reports 
+ Pharmacy Management 
+ System 
+ Customer 
+ Pharmacy staff 
+ Search Query 
+ Availability,Price,location, 
+ service 
+ Update Inventory, 
+ price, Services, hours 
+ Confirmation 
+ Pharmacy Management 
+ System 
+ Customer 
+ Pharmacy staff 
+ Search Query 
+ Availability,Price,location, 
+ service 
+ Update Inventory, 
+ price, Services, hours 
+ Confirmation 
+ 
+ Figure 7.1: Level 0 DFD (Context Diagram) 
+ External Entity 
+ Input to System 
+ Output from System 
+ Customer 
+ Search Query 
+ Availability, Price, Location, Service 
+ Pharmacy Staff 
+ Update Inventory, Price, Services, Hours 
+ Confirmation 
+ 7.2 Level 1 DFD (Major Processes) 
+ The Level 1 DFD details major system processes: 
+ Process 
+ Input 
+ Output 
+ Add Medicine 
+ Medicine details from Admin/Pharmacist 
+ Stored medicine in Medicine Database 
+ Update Medicine 
+ Updated details, Medicine ID 
+ Updated records in Medicine Database 
+ Delete Medicine 
+ Medicine ID 
+ Removed record from Medicine Database 
+ Search Medicine 
+ Medicine name 
+ Availability info from Medicine Database 
+ Monitor Stocks 
+ Medicine Database data 
+ Alerts to Admin/Pharmacist 
+ Table 1: Level 1 Data Flow Processes - Medicine Management 
+ 7.3 Level 2 DFD (Detailed Processes) 
+ The Level 2 DFD provides detailed view of sales processing: 
+ medicine details 
+ updated details 
+ Admin/ Phamacist 
+ Add medicine 
+ Update medicine 
+ Delete medicine 
+ Search medicine 
+ Monitor stocks 
+ Medicine 
+ Database 
+ Medicine 
+ Database 
+ Medicine 
+ Database 
+ Medicine 
+ Database 
+ Medicine 
+ Database 
+ medicine ID 
+ alerts 
+ medicine name 
+ availability info 
+ medicine details 
+ updated details 
+ Admin/ Phamacist 
+ Add medicine 
+ Update medicine 
+ Delete medicine 
+ Search medicine 
+ Monitor stocks 
+ Medicine 
+ Database 
+ Medicine 
+ Database 
+ Medicine 
+ Database 
+ Medicine 
+ Database 
+ Medicine 
+ Database 
+ medicine ID 
+ alerts 
+ medicine name 
+ availability info 
+ 
+ Figure 7.2: Level 1 DFD (Medicine Management) 
+ Level 2 DFD - Sales Processing 
+ Step 
+ Actor 
+ Action 
+ 1 
+ Customer 
+ Submit medicine request 
+ 2 
+ System 
+ Receive sale request 
+ 3 
+ System 
+ Check medicine availability from Medicine Database 
+ 4 
+ Cashier/Pharmacist 
+ Receive availability status 
+ 5 
+ System 
+ Calculate total price based on medicine and quantity 
+ 6 
+ System 
+ Record sale with sale details 
+ 7 
+ System 
+ Process payment 
+ 8 
+ System 
+ Update inventory (sold quantity) 
+ 9 
+ System 
+ Store transaction in Sales Database 
+ 10 
+ Customer 
+ Receive receipt 
+ Table 2: Sales Processing Data Flow 
+ Customer 
+ Cashier/Pharmacist 
+ Receive sale 
+ request 
+ Update Inventory 
+ sale details 
+ Process Payment 
+ Record Sale 
+ Calculate Total 
+ Price 
+ Check medicine 
+ availability 
+ Medicine 
+ Database 
+ medicine ID 
+ availability status 
+ total amount 
+ medicine 
+ & quantity 
+ payment 
+ receipt 
+ Sales Database 
+ Medicine 
+ Database 
+ sold quantity 
+ medicine request 
+ sale details 
+ Customer 
+ Cashier/Pharmacist 
+ Receive sale 
+ request 
+ Update Inventory 
+ sale details 
+ Process Payment 
+ Record Sale 
+ Calculate Total 
+ Price 
+ Check medicine 
+ availability 
+ Medicine 
+ Database 
+ medicine ID 
+ availability status 
+ total amount 
+ medicine 
+ & quantity 
+ payment 
+ receipt 
+ Sales Database 
+ Medicine 
+ Database 
+ sold quantity 
+ medicine request 
+ sale details 
+ 
+ Level 2 DFD (Sales Processing 
+ Data Stores: 
+ Medicine Database: Stores all medicine information including ID, name, quantity, price, expiry date 
+ Sales Database: Stores all transaction records including sale details, amounts, timestamps 
+ PHASE 2: DESIGN PHASE 
+ 1. Database Design 
+ 1.1 Database Technology 
+ DBMS: MySQL (relational database) 
+ Normalization: Third Normal Form (3NF) 
+ Access Layer: ORM ( Sequelize for Node.js, SQLAlchemy for Python) 
+ 
+ 1.2 Database Schema Overview 
+ The database schema is designed to support pharmacy inventory management, sales processing, prescription handling, and user role management. The schema follows normalization principles to ensure data integrity, reduce redundancy, and optimize query performance. 
+ 
+ Schema Summary: 
+ • Tables: 7 primary tables 
+ • Foreign Keys: 5 relationships 
+ • Constraints: Referential integrity, unique constraints, not-null validations 
+ 
+ 1.3 Table Definitions 
+ 1.3.1 Users Table 
+ Field 
+ Data Type 
+ Constraints 
+ Description 
+ user_id 
+ INT 
+ PRIMARY KEY, AUTO INCREMENT 
+ Unique user identifier 
+ full_name 
+ VARCHAR(255) 
+ NOT NULL 
+ User's full name 
+ email 
+ VARCHAR(255) 
+ UNIQUE, NOT NULL 
+ User's email address 
+ password 
+ VARCHAR(255) 
+ NOT NULL 
+ Encrypted password 
+ role 
+ VARCHAR(50) 
+ NOT NULL 
+ User role (admin/pharmacist/cashier/customer) 
+ created_at 
+ DATETIME 
+ DEFAULT CURRENT_TIMESTAMP 
+ Registration timestamp 
+ 
+ Purpose: Stores user account information and authentication credentials for administrators, pharmacists, cashiers, and customers. 
+ 
+ 1.3.2 Suppliers Table 
+ Field 
+ Data Type 
+ Constraints 
+ Description 
+ supplier_id 
+ INT 
+ PRIMARY KEY, AUTO INCREMENT 
+ Unique supplier identifier 
+ supplier_name 
+ VARCHAR(255) 
+ NOT NULL 
+ Supplier company name 
+ phone 
+ VARCHAR(20) 
+ NOT NULL 
+ Contact phone number 
+ address 
+ VARCHAR(500) 
+ NOT NULL 
+ Supplier address 
+ 
+ Purpose: Stores supplier information for medicine procurement and inventory management. 
+ 
+ 1.3.3 Medicines Table 
+ Field 
+ Data Type 
+ Constraints 
+ Description 
+ medicine_id 
+ INT 
+ PRIMARY KEY, AUTO INCREMENT 
+ Unique medicine identifier 
+ medicine_name 
+ VARCHAR(255) 
+ NOT NULL 
+ Name of the medicine 
+ category 
+ VARCHAR(100) 
+ NOT NULL 
+ Medicine category (Pain Relief, Antibiotic, etc.) 
+ price 
+ DECIMAL(10,2) 
+ NOT NULL 
+ Unit price of medicine 
+ quantity 
+ INT 
+ NOT NULL 
+ Current stock quantity 
+ expiry_date 
+ DATE 
+ - 
+ Medicine expiration date 
+ supplier_id 
+ INT 
+ FOREIGN KEY 
+ Reference to supplier 
+ 
+ Purpose: Stores medicine inventory information including stock levels, pricing, and expiry tracking. 
+ 
+ 1.3.4 Sales Table 
+ Field 
+ Data Type 
+ Constraints 
+ Description 
+ sale_id 
+ INT 
+ PRIMARY KEY, AUTO INCREMENT 
+ Unique sale identifier 
+ sale_date 
+ DATETIME 
+ DEFAULT CURRENT_TIMESTAMP 
+ Date and time of sale 
+ total_amount 
+ DECIMAL(10,2) 
+ NOT NULL 
+ Total sale amount 
+ user_id 
+ INT 
+ FOREIGN KEY 
+ Reference to user (cashier) 
+ 
+ Purpose: Records all sales transactions processed by cashiers. 
+ 
+ 1.3.5 Sale_Items Table 
+ Field 
+ Data Type 
+ Constraints 
+ Description 
+ sale_item_id 
+ INT 
+ PRIMARY KEY, AUTO INCREMENT 
+ Unique sale item identifier 
+ sale_id 
+ INT 
+ FOREIGN KEY 
+ Reference to sale 
+ medicine_id 
+ INT 
+ FOREIGN KEY 
+ Reference to medicine 
+ quantity 
+ INT 
+ NOT NULL 
+ Quantity sold 
+ price 
+ DECIMAL(10,2) 
+ NOT NULL 
+ Unit price at time of sale 
+ 
+ Purpose: Stores individual line items for each sale transaction. 
+ 
+ 1.3.6 Prescriptions Table 
+ Field 
+ Data Type 
+ Constraints 
+ Description 
+ prescription_id 
+ INT 
+ PRIMARY KEY, AUTO INCREMENT 
+ Unique prescription identifier 
+ customer_name 
+ VARCHAR(255) 
+ NOT NULL 
+ Name of the customer 
+ doctor_name 
+ VARCHAR(255) 
+ NOT NULL 
+ Prescribing doctor's name 
+ prescription_date 
+ DATE 
+ NOT NULL 
+ Date of prescription 
+ 
+ Purpose: Records prescription information for medicines that require doctor's authorization. 
+ 
+ 1.3.7 Inventory_Logs Table 
+ Field 
+ Data Type 
+ Constraints 
+ Description 
+ inventory_id 
+ INT 
+ PRIMARY KEY, AUTO INCREMENT 
+ Unique log identifier 
+ medicine_id 
+ INT 
+ FOREIGN KEY 
+ Reference to medicine 
+ change_type 
+ VARCHAR(50) 
+ NOT NULL 
+ Type of change (add/remove/adjust) 
+ quantity_changed 
+ INT 
+ NOT NULL 
+ Quantity changed 
+ log_date 
+ DATETIME 
+ DEFAULT CURRENT_TIMESTAMP 
+ Timestamp of change 
+ 
+ Purpose: Tracks all inventory changes for audit and stock management purposes. 
+ 
+ 2. Entity Relationship Diagram (ERD) 
+ The following diagram illustrates the relationships between database entities: 
+ 
+ 
+ 
+ Figure 1: PharmaCare System Entity Relationship Diagram 
+ 
+ 3. User Interface Overview 
+ 3.1 UI/UX Design Principles 
+ The PharmaCare Management System interface is designed following these principles: 
+ 
+ • Clean Professional Design: Modern, healthcare-appropriate aesthetics 
+ • Role-Based Navigation: Each user type has a customized dashboard 
+ • Intuitive Workflows: Clear information hierarchy and self-evident navigation 
+ • Accessibility: High contrast ratios, readable fonts, keyboard navigation support 
+ • Mobile-First Responsive: Optimal experience across all device sizes 
+ • Real-time Updates: Instant inventory and sales data refresh 
+ • Card-Based Layout: Organized content presentation using cards 
+ 
+ 3.2 Color Palette 
+ Color 
+ Hex Code 
+ Usage 
+ Primary Blue 
+ #3B82F6 
+ Headers, primary buttons, navigation 
+ Light Blue 
+ #EFF6FF 
+ Backgrounds, secondary elements 
+ Success Green 
+ #22C55E 
+ Positive actions, in-stock indicators 
+ Warning Yellow 
+ #F59E0B 
+ Expiring soon alerts 
+ Alert Red 
+ #EF4444 
+ Errors, expired items, out of stock 
+ Text Gray 
+ #374151 
+ Primary text content 
+ 
+ 3.3 Key Screen Templates 
+ 3.3.1 Homepage 
+ Purpose: Landing page showcasing PharmaCare features and providing access to the system. 
+ 
+ Key Components: 
+ • Hero section with system introduction 
+ • Feature highlights (Secure & Reliable, Real-time Inventory, Patient Care) 
+ • Role-based dashboard descriptions 
+ • Call-to-action buttons (Start Free Trial, Sign In) 
+ 
+ 
+ 
+ 
+ Figure 2: PharmaCare Homepage Design 
+ 
+ 3.3.2 Sign In Page 
+ Fields: 
+ • Email address input 
+ • Password input 
+ • Sign In button 
+ • Registration link 
+ 
+ 
+ Figure 3: Sign In Page Design 
+ 
+ 3.3.3 Pharmacist Dashboard 
+ Key Sections: 
+ • Available Medicines count 
+ • Out of Stock alerts 
+ • Expiring Soon notifications (30 days) 
+ • Expired Medicines list 
+ • Medicines Sold statistics 
+ • Total Stock overview 
+ • Insurance Card Dispensing section 
+ 
+ 
+ Figure 4: Pharmacist Dashboard Design 
+ 
+ 3.3.4 Customer Page 
+ Key Sections: 
+ • Medicine browsing and search 
+ • Category filters (All Medicines, Kids Health, etc.) 
+ • Shopping cart functionality 
+ • Medicine details with stock and pricing 
+ • Prescription required indicators 
+ 
+ 
+ 
+ 
+ 
+ Figure 5: Customer Page Design 
+ 
+ 3.3.5 Cashier Page 
+ Key Sections: 
+ • Today's Sales summary 
+ • Weekly Sales statistics 
+ • Yearly Sales overview 
+ • Today's Transactions count 
+ • Medicine search and sale processing 
+ • Sales History table 
+ • Cash/Insurance payment indicators 
+ 
+ 
+ Figure 6: Cashier Station Design 
+ 
+ 3.3.6 Admin Dashboard 
+ Key Sections: 
+ • Total Workers overview 
+ • Total Medicines count 
+ • Active Shifts monitoring 
+ • Today's Sales summary 
+ • Registered Workers table with shifts 
+ • Recent Sales activity 
+ 
+ 
+ 
+ Figure 7: Admin Dashboard Design 
+ 
+ 4. Sequence Diagrams 
+ 4.1 User Login Sequence 
+ This diagram illustrates the authentication flow for all user types. 
+ 
+ 
+ Figure 8: User Login Sequence Diagram 
+ 
+ Actor 
+ Action 
+ System Response 
+ User 
+ Enter email and password 
+ Display login form 
+ User Interface 
+ Send credentials 
+ Forward to Authentication Service 
+ Authentication Service 
+ Validate credentials 
+ Query Database 
+ Database 
+ Return validation result 
+ Credentials valid/invalid 
+ Authentication Service 
+ Retrieve user role 
+ Query Database 
+ Database 
+ Return user role 
+ Role information 
+ Dashboard 
+ Display personalized view 
+ Show role-based dashboard 
+ 
+ 4.2 Cashier Sales Process Sequence 
+ This diagram shows the complete sales transaction flow handled by cashiers. 
+ 
+ 
+ 
+ 
+ 
+ Figure 9: Cashier Sales Process Sequence Diagram 
+ 
+ Step 
+ Actor 
+ Action 
+ 1 
+ Cashier 
+ Search for medicine 
+ 2 
+ System 
+ Query medicine availability from Database 
+ 3 
+ Database 
+ Return medicine details 
+ 4 
+ System 
+ Display medicine info and availability 
+ 5 
+ Cashier 
+ Add medicine to cart 
+ 6 
+ System 
+ Calculate total amount 
+ 7 
+ Cashier 
+ Process payment 
+ 8 
+ System 
+ Create sale record in Database 
+ 9 
+ Inventory 
+ Update quantity (reduce stock) 
+ 10 
+ Receipt Generator 
+ Generate and display receipt 
+ 4.3 Admin Medicine Management Sequence 
+ This diagram illustrates the medicine addition workflow for administrators and pharmacists. 
+ 
+ 
+ Figure 10: Admin Medicine Management Sequence Diagram 
+ 
+ Step 
+ Actor 
+ Action 
+ Result 
+ 1 
+ Admin/Pharmacist 
+ Select 'Add Medicine' 
+ Display medicine form 
+ 2 
+ System 
+ Show form fields 
+ Medicine entry form displayed 
+ 3 
+ Admin/Pharmacist 
+ Submit medicine details 
+ Form submission 
+ 4 
+ Input Validator 
+ Validate input data 
+ Validation result 
+ 5 
+ System (Valid) 
+ Store medicine data 
+ Data stored successfully 
+ 6 
+ System (Valid) 
+ Generate confirmation 
+ Display success message 
+ 7 
+ System (Invalid) 
+ Show validation errors 
+ Display error messages 
+ 
+ 5 CONCLUSION 
+ The PharmaCare Management System represents a comprehensive solution for modern pharmacy operations. With a clear set of functional and non-functional requirements, a well-designed database schema, and user-centered interface principles, the system is positioned for successful development and deployment. 
+ 
+ The modular architecture and role-based approach enable efficient pharmacy management, allowing administrators, pharmacists, cashiers, and customers to perform their respective tasks seamlessly. The system's scalability ensures it can grow to serve larger pharmacy operations while maintaining performance and reliability. 
+ 
+ By combining modern web technologies with healthcare-appropriate design principles, PharmaCare will streamline inventory management, sales processing, and prescription handling while providing all stakeholders with convenient access to essential pharmacy services. 
+ 
+ Document Approval 
+ Role 
+ Name 
+ Signature 
+ Date 
+ Project Manager 
+ [Your Name] 
+ ___________ 
+ January 08, 2026 
+ Technical Lead 
+ [Your Name] 
+ ___________ 
+ January 08, 2026 
+ QA Lead 
+ [Your Name] 
+ ___________ 
+ January 08, 2026 
+ Stakeholder 
+ [Your Name] 
+ ___________ 
+ January 08, 2026 
+ 
+ 
